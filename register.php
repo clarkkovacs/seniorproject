@@ -1,4 +1,7 @@
+
+
 <?php
+
 // Include config file
 require_once "config.php";
 
@@ -25,7 +28,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
-                /* store result */
+                /* store result*/
                 mysqli_stmt_store_result($stmt);
 
                 if(mysqli_stmt_num_rows($stmt) == 1){
@@ -91,8 +94,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Close connection
     mysqli_close($link);
 }
-?>
 
+?>
 
 <html lang="en">
 <head>
@@ -108,6 +111,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <div class="wrapper">
     <h2>Sign Up</h2>
     <p>Please fill this form to create an account.</p>
+
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
         <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
             <label>Username</label>
@@ -130,6 +134,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </div>
         <p>Already have an account? <a href="login.php">Login here</a>.</p>
     </form>
+
 </div>
 </body>
 </html>
